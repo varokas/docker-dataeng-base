@@ -33,10 +33,10 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-        tags: |
-          # minimal (short sha)
-          type=sha
-          type=raw,value=latest
+          tags: |
+            # minimal (short sha)
+            type=sha
+            type=raw,value=main
       -
         name: Build and push
         uses: docker/build-push-action@v2
