@@ -11,7 +11,14 @@ RUN apt update \
     && add-apt-repository ppa:ubuntugis/ppa \
     && apt update \
     && apt install -y software-properties-common python3 python3-pip # python 3.8 \ 
+    ## Install for geopandas
     && apt install -y gdal-bin libgdal-dev \
+    ## install for pyppeteer
+    && apt-get install -y libx11-6\
+    && apt-get install -y libx11-xcb1\
+    && apt-get install -y libxcomposite-dev\
+    && apt-get install -y libxcursor-dev\
+    && apt-get install -y libxdamage1\
     && rm -rf /var/lib/apt/lists/*
 
 ## PIP 
