@@ -23,5 +23,5 @@ RUN apt update \
 
 ## PIP 
 RUN python3 -m pip install --upgrade pip \
-    && python3 -m pip install poetry
+    && python3 -m pip install poetry==1.3.2
 
