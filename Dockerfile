@@ -10,11 +10,10 @@ ENV SPARK_VERSION=3.3.2
 RUN apt update \
     && apt install -y software-properties-common gnupg ca-certificates curl\
     && add-apt-repository ppa:ubuntugis/ppa \
-    && add-apt-repository ppa:deadsnakes/ppa \
     && curl -s https://repos.azul.com/azul-repo.key | gpg --dearmor -o /usr/share/keyrings/azul.gpg \
     && echo "deb [signed-by=/usr/share/keyrings/azul.gpg] https://repos.azul.com/zulu/deb stable main" | tee /etc/apt/sources.list.d/zulu.list \
     && apt update \
-    && apt-get install -y python3.8 python3.8-distutils python3.8-dev \ 
+    && apt-get install -y python3-dev \
     && apt-get install -y zip unzip \
     && apt-get install -y g++ \
     && apt-get install -y gdal-bin libgdal-dev \
@@ -27,8 +26,8 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 
 ## PIP 
-RUN curl https://bootstrap.pypa.io/get-pip.py | python3.8
-RUN python3.8 -m pip install poetry==1.3.2
+RUN curl https://bootstrap.pypa.io/get-pip.py | python3
+RUN python3 -m pip install poetry==1.3.2
 
 ## Sparks
 RUN curl -L -o spark-$SPARK_VERSION-bin-hadoop3.tgz https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop3.tgz \
