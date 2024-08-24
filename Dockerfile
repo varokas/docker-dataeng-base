@@ -4,7 +4,7 @@ FROM ubuntu:22.04
 
 # To make sure ubuntu does not ask for timezone region interactively
 ENV DEBIAN_FRONTEND=noninteractive 
-ENV SPARK_VERSION=3.3.2
+ENV SPARK_VERSION=3.5.2
 
 ## Ubuntu Apts
 RUN apt update \
@@ -33,6 +33,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ## PIP 
 RUN curl https://bootstrap.pypa.io/get-pip.py | python3
 RUN python3 -m pip install poetry==1.3.2
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Sparks
 RUN curl -L -o spark-$SPARK_VERSION-bin-hadoop3.tgz https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop3.tgz \
