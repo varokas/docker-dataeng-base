@@ -4,3 +4,4 @@
 * LibGDAL. Required for geopandas
 * Python3 and poetry
 * Misc apt package for puppeteer
+* uv
