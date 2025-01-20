@@ -2,6 +2,6 @@
 
 * Ubuntu 22.04 
 * LibGDAL. Required for geopandas
-* Python3 and poetry
+* Python3 
 * Misc apt package for puppeteer
-* uv
+* UV
