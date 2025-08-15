@@ -1,0 +1,10 @@
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    uses: ./.github/workflows/docker-build.yml
+    with:
+      push: false
+      tag_type: type=pr
