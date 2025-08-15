@@ -9,9 +9,6 @@ on:
         description: 'Tag type for metadata action'
         required: true
         type: string
-    secrets:
-      GITHUB_TOKEN:
-        required: false
 
 env:
   REGISTRY: ghcr.io

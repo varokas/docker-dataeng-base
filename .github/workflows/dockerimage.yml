@@ -13,5 +13,4 @@ jobs:
         # minimal (short sha)
         type=sha
         type=raw,value=main
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    secrets: inherit
