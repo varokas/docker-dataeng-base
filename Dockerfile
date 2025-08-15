@@ -12,6 +12,7 @@ RUN apt update \
     && apt install -y software-properties-common gnupg ca-certificates curl\
     && add-apt-repository ppa:ubuntugis/ppa \
     && apt update \
+    && apt-get install -y python-dev \
     && apt-get install -y tzdata \
     && apt-get install -y zip unzip \
     && apt-get install -y g++ \
